@@ -10,6 +10,7 @@ export const Checkbox: FC = () => {
   return (
     <>
       <input type="checkbox" checked={isChecked} onChange={handleCheckbox} />
+      {isChecked ? "checked" : "is not checked"}
     </>
   );
 };

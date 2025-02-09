@@ -1,4 +1,4 @@
-import { type FC, useState } from "react";
+import { type FC } from "react";
 import { Navbar } from "./components/Navbar";
 import { Counter } from "./components/Counter";
 import { Input } from "./components/Input";
@@ -17,7 +17,7 @@ import { useCounter } from "./hooks/useCounter";
 const items = ["1", "1", "2"];
 
 export const Dashboard: FC = () => {
-  // custom hooks
+  // custom hooks, hooks must be call in top level of component (not possible in if, loops...)
   const { counterValue, increment, decrement } = useCounter();
   useCustomLogging();
 
@@ -30,7 +30,7 @@ export const Dashboard: FC = () => {
         padding: "20rem",
       }}
     >
-      {counterValue}
+      {`counter value: ${counterValue}`}
       <div>
         <Navbar />
         <Counter

@@ -1,4 +1,4 @@
-import { type FC, useEffect } from "react";
+import { type FC } from "react";
 
 // Props is convention
 interface Props {
@@ -6,15 +6,17 @@ interface Props {
   onDecrement: (info: string) => void;
 }
 
-// Props desctructuring
+// Props destructuring
 export const Counter: FC<Props> = ({ onIncrement, onDecrement }) => {
   const getApi = () => "mock api response";
 
   return (
-    <>
-      <button onClick={() => onDecrement("decrement")}>-</button>
-      <button onClick={onIncrement}>+</button>
+    <div>
+      <div>
+        <button onClick={() => onDecrement("decrement")}>-</button>
+        <button onClick={onIncrement}>+</button>
+      </div>
       {getApi()}
-    </>
+    </div>
   );
 };
